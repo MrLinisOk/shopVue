@@ -1,10 +1,12 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = "http://localhost:8090/";
+axios.defaults.baseURL = "http://localhost:8090/";//本地后台服务器地址
 axios.defaults.responseType = 'json';
 axios.defaults.timeout = 200000;
 
 const get = (url, params) => {
+    console.log('url:' + url);
+    console.log('data:' + JSON.stringify(params));
     return axios({
         method: 'get',
         withCredentials: true,
@@ -33,7 +35,7 @@ const post = (url, data) => {
         url,
         responseType: 'text',
         headers: {
-            'Content-Type': 'application/json;charset=UTF-8',
+            'Content-Type': 'application/x-www-form-urlencoded',
 
             timestamp: getNow(new Date()),
             apiCode: url,

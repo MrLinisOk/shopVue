@@ -2,7 +2,7 @@
 
     <div>
         <button @click="testClick">test</button>
-        <login />
+        <login :bg_url="this.bg_url"/>
     </div>
 
 </template>
@@ -19,22 +19,25 @@
         },
         data() {
             return {
-                test: ''
+                bg_url: ''
             }
         },
 
         methods: {
             testClick() {
+                
+                // this.$http
+                //     .get('/user/queryUser')
+                //     .then(res => {
+                //         console.log(res);
+                //     })
+                //     .catch(function() {
 
-                this.$http
-                    .get('/user/queryUser')
-                    .then(res => {
-                        console.log(res);
-                    })
-                    .catch(function() {
-
-                    });
+                //     });
             }
+        },
+        mounted:function(){
+            this.bg_url = require("../img/login_bg_block.jpg");
         }
     }
 </script>
