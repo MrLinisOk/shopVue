@@ -121,7 +121,7 @@ export default {
     },
     mounted: function () {
         this.bgUrl = this.bg_url;
-        //this.changeCodeImg();
+        this.changeCodeImg();
         this.code = '测试prop传值';
         //this.code = JSON.parse(sessionStorage.getItem("code"));
     },
